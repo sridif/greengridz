@@ -52,14 +52,13 @@
 
 
 <div>  
- <a href="/regression.html"><img src="http://www.eecuk.co.uk/wp-content/uploads/2013/02/sustainability.jpg" class="span4 img-rounded"> </a>
+ <a href="/compare.html"><img src="https://docs.google.com/drawings/d/16dvJV_L3WP203PQHnOS11Nw25bFocnWaAIMZ_vZDco8/pub?w=560&amp;h=372"style="width:200px;height:175px" class="img-rounded"> </a>
 
 
 </div>
 
-<span class="badge badge-info">1</span>
 <div>
- <a href="/timeseries.html"> <img src="http://www.kanybal.com/green/load.jpg"  class="img-rounded span4"> </a>
+ <a href="/load.html"> <img src="http://www.kanybal.com/green/load.jpg" style="width:200px;height:175px" class="img-rounded"> </a>
 </div>
 
 <!--a href="/realtime.html"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYtiQizkJ9kX_u9TgNeUSglV9K4-liVGjClOh0TADvZW-3VcqRAQ" style="width:200px;height:175px" class="img-rounded"> </a>

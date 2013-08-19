@@ -1,0 +1,115 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Load prediction</title>
+<link href="http://www.kanybal.com/assets/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script type="text/javascript">
+$(function() {
+$.getJSON('http://www.highcharts.com/samples/data/jsonp.php?filename=aapl-c.json&callback=?', function(data) {
+
+// Create the chart
+$('#container').highcharts('StockChart', {
+
+
+rangeSelector : {
+selected : 1
+},
+
+title : {
+text : 'Extract Seasonal load patterns'
+},
+
+series : [{
+name : 'AAPL ',
+data : data,
+type : 'areaspline',
+threshold : null,
+tooltip : {
+valueDecimals : 2
+},
+fillColor : {
+linearGradient : {
+x1: 0, 
+y1: 0, 
+x2: 0, 
+y2: 1
+},
+stops : [[0, Highcharts.getOptions().colors[0]], [1, 'rgba(0,0,0,0)']]
+}
+}]
+});
+});
+});
+$(function() {
+$.getJSON('http://www.highcharts.com/samples/data/jsonp.php?filename=new-intraday.json&callback=?', function(data) {
+
+// create the chart
+$('#container2').highcharts('StockChart', {
+
+
+title: {
+text: ' Extract daily usage patterns '
+},
+
+xAxis: {
+gapGridLineWidth: 0
+},
+
+rangeSelector : {
+buttons : [{
+type : 'hour',
+count : 1,
+text : '1h'
+}, {
+type : 'day',
+count : 1,
+text : '1D'
+}, {
+type : 'all',
+count : 1,
+text : 'All'
+}],
+selected : 1,
+inputEnabled : false
+},
+
+series : [{
+name : 'AAPL',
+type: 'area',
+data : data,
+gapSize: 5,
+tooltip: {
+valueDecimals: 2
+},
+fillColor : {
+linearGradient : {
+x1: 0, 
+y1: 0, 
+x2: 0, 
+y2: 1
+},
+stops : [[0, Highcharts.getOptions().colors[0]], [1, 'rgba(0,0,0,0)']]
+},
+threshold: null
+}]
+});
+});
+});
+</script>
+    </head>
+  <body>
+<script src="http://www.kanybal.com/highcharts/js/highstock.js"></script>
+<script src="http://www.kanybal.com/highcharts/js/modules/exporting.js"></script>
+<div class="btn-group">
+  <button class="btn btn-primary">Daily patterns</button>
+  <a href="/load2.html"><button class="btn">Yearly patterns</button></a>
+  <a href="/"><button class="btn">Home</button></a>  
+  
+</div>
+<div id="container2" style="height: 500px; min-width: 500px"></div>
+
+
+</body>
+</html>

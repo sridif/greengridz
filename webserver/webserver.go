@@ -7,6 +7,6 @@ import (
 
 func main() {
 	// Simple static webserver:
-	log.Fatal(http.ListenAndServe("demo.greengridz.com:9921", http.FileServer(http.Dir("/home/ec2-user/dev/src/greengridz/webserver/templates/"))))
+	log.Fatal(http.ListenAndServe("localhost:9922", http.FileServer(http.Dir("/home/ubuntu/dev/src/greengridz/webserver/templates/"))))
 }
 
